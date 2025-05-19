@@ -3,7 +3,7 @@
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.4.2",
-    "rails_design": "git+https://gitee.com/work-design/rails_design.git"
+    "rails_design": "file:engine/rails_design"
   },
   "devDependencies": {
     "esbuild": "^0.23.0",
