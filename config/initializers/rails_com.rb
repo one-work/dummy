@@ -1,4 +1,4 @@
-RailsCom.configure do |config|
+RailsCom.config.tap do |config|
   config.default_admin_accounts = Rails.application.credentials[:admin_accounts]
   config.intercept_not_found = true
   config.debug = false

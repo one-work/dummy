@@ -1,6 +1,6 @@
 max_threads_count = ENV.fetch('RAILS_MAX_THREADS') { 1 }
 min_threads_count = ENV.fetch('RAILS_MIN_THREADS') { max_threads_count }
-dir = @config.options[:app].root.to_s
+dir = ENV['PWD']
 
 #workers 1
 threads min_threads_count, max_threads_count
