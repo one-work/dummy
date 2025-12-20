@@ -1,5 +1,5 @@
 service: dummy
-image: work-design/dummy
+image: dummy
 deploy_timeout: 100
 servers:
   web:
@@ -9,33 +9,61 @@ servers:
     hosts:
       - 192.168.1.1
     cmd: bin/jobs
+boot:
+  parallel_roles: true
 
 registry:
-  server: ccr.ccs.tencentyun.com
-  username:
-    - KAMAL_REGISTRY_USERNAME
-  password:
-    - KAMAL_REGISTRY_PASSWORD
+  server: localhost:5555
 
 volumes:
   - ~/app/acme:/rails/acme
-  - ~/app/tmp/storage:/rails/tmp/storage
   - ~/app/storage:/rails/storage
+  - ~/app/tmp/storage:/rails/tmp/storage
+  - ~/.ssh:/root/.ssh
 
 env:
   clear:
     RAILS_ENV: production
-    RAILS_MAX_THREADS: 20
+    RAILS_MAX_THREADS: 6
+    HOST: one.work
+    ASSET_HOST: assets.one.work
+    TZ: Asia/Shanghai
+  secret:
+    - POSTGRES_PASSWORD
+    - RAILS_MASTER_KEY
 
 builder:
   dockerfile: deploy/Dockerfile
   arch: x86_64
-  remote: ssh://ubuntu@49.235.150.128
+  context: .
+
+accessories:
+  postgres:
+    image: ccr.ccs.tencentyun.com/kamal/postgres:18.1-alpine
+    host: one.work
+    port: 5432
+    env:
+      clear:
+        POSTGRES_INITDB_ARGS: -c include_if_exists=/var/lib/postgresql/custom.conf
+      secret:
+        - POSTGRES_PASSWORD
+    volumes:
+      - ~/postgres_data:/var/lib/postgresql/18/docker
+      - ~/app/db_dump:/root/pg_dump
+    files:
+      - deploy/postgresql.conf:/var/lib/postgresql/custom.conf
 
 proxy:
+  hosts:
+    - one.work
+  ssl: true
   app_port: 3000
   response_timeout: 100
   forward_headers: true
   healthcheck:
-    interval: 30
-    timeout: 60
+    interval: 5
+    timeout: 150
+  run:
+    registry: ccr.ccs.tencentyun.com
+    repository: kamal
+    version: v0.9.1
