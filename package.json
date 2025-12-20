@@ -2,10 +2,10 @@
   "name": "dummy",
   "private": true,
   "dependencies": {
-    "rails_design": "file:engine/rails_design"
+    "rails_ui": "file:engine/rails_ui"
   },
   "devDependencies": {
-    "esbuild": "^0.23.0",
+    "esbuild": "^0.27.2",
     "run-pty": "^5.0.0"
   },
   "scripts": {
