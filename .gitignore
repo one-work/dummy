@@ -12,6 +12,7 @@ db/migrate
 db/schema.rb
 
 public/fonts
+public/assets
 public/challenge
 
 app/assets/builds/*
