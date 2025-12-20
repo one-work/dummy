@@ -37,22 +37,6 @@ builder:
   arch: x86_64
   context: .
 
-accessories:
-  postgres:
-    image: ccr.ccs.tencentyun.com/kamal/postgres:18.1-alpine
-    host: one.work
-    port: 5432
-    env:
-      clear:
-        POSTGRES_INITDB_ARGS: -c include_if_exists=/var/lib/postgresql/custom.conf
-      secret:
-        - POSTGRES_PASSWORD
-    volumes:
-      - ~/postgres_data:/var/lib/postgresql/18/docker
-      - ~/app/db_dump:/root/pg_dump
-    files:
-      - deploy/postgresql.conf:/var/lib/postgresql/custom.conf
-
 proxy:
   hosts:
     - one.work

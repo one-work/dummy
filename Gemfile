@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-gem 'rails', '8.0.0'
+gem 'rails', '8.1.0'
 gem 'puma'
 gem 'solid_queue'
 gem 'solid_cache'
@@ -16,14 +16,13 @@ gem 'sqlite3'
 gem 'bcrypt'
 gem 'image_processing'
 gem 'rqrcode'
-gem 'csv'
-
 
 # Engines
 gem 'default_where', path: 'engine/default_where'
+gem 'default_form', path: 'engine/default_form'
 gem 'rails_com', path: 'engine/rails_com'
 gem 'rails_auth', path: 'engine/rails_auth'
-gem 'rails_design', path: 'engine/rails_design'
+gem 'rails_ui', path: 'engine/rails_ui'
 
 # Assets
 gem 'turbo-rails'
