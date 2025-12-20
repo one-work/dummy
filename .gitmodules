@@ -1,12 +1,3 @@
-[submodule "engine/rails_com"]
-  path = engine/rails_com
-  url = ./engine/rails_com
-[submodule "engine/rails_design"]
-  path = engine/rails_design
-  url = ./engine/rails_design
 [submodule "engine/default_where"]
   path = engine/default_where
   url = ./engine/default_where
-[submodule "engine/rails_auth"]
-	path = engine/rails_auth
-	url = ./engine/rails_auth
