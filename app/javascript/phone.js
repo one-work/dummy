@@ -1,3 +1,3 @@
-import 'rails_design'
-import 'rails_design/stimulus_weui'
+import 'rails_ui'
+import 'rails_ui/stimulus_wx'
 application.debug = true
