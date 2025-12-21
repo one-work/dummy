@@ -28,6 +28,8 @@ Rails.application.configure do
   config.active_storage.service = :local
 
   config.active_support.deprecation = :log
+
+  config.action_view.annotate_rendered_view_with_filenames = true
 end
 
 Rails.application.routes.default_url_options = {
