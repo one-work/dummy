@@ -18,6 +18,9 @@ development:
     <<: *default
     database: storage/development_cable.sqlite3
     migrations_paths: db/cable_migrate
+  prod:
+    <<: *default
+    database: storage/development.sqlite3
 test:
   primary:
     <<: *default
@@ -34,6 +37,9 @@ test:
     <<: *default
     database: storage/test_cable.sqlite3
     migrations_paths: db/cable_migrate
+  prod:
+    <<: *default
+    database: storage/development.sqlite3
 production:
   primary:
     <<: *default
