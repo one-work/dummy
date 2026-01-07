@@ -20,6 +20,8 @@ Rails.application.configure do
     config.cache_store = :null_store
   end
 
+  config.action_controller.forgery_protection_verification_strategy = :header_or_legacy_token
+
   config.action_mailer.raise_delivery_errors = false
   config.action_mailer.perform_caching = false
 

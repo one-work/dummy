@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   include Auth::Controller::Application if defined? RailsAuth
   include Org::Controller::Application if defined? RailsOrg
 
-  protect_from_forgery trusted_origins: ['http://lvh.me:3000'], with: :exception, unless: -> { json_format? }
+  protect_from_forgery trusted_origins: ['http://lvh.me:3000'], with: :exception
 
   before_action do
     ActiveStorage::Current.url_options = {
