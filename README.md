@@ -9,6 +9,8 @@
   * 自动生成 migration: `bin/rails g rails_com:migrations`，[详见]()
 
 ## 如何使用
+* git submodule update --init
+* git submodule foreach git checkout main
 
 
 ## 开始开发
