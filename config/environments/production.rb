@@ -10,7 +10,6 @@ Rails.application.configure do
 
   config.i18n.fallbacks = true
 
-  config.logger = ActiveSupport::Logger.new(STDOUT).tap  { |logger| logger.formatter = ::Logger::Formatter.new }.then { |logger| ActiveSupport::TaggedLogging.new(logger) }
   config.log_tags = [ :request_id ]
   config.log_level = :debug
 
