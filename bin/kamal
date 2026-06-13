@@ -2,7 +2,7 @@
 
 # Prevent failures from being reported twice.
 Thread.report_on_exception = false
-gem 'rails_deploy'
+require_relative '../config/boot'
 require 'kamal'
 require 'kamal_override'
 
