@@ -16,6 +16,7 @@ gem 'sqlite3'
 gem 'bcrypt'
 gem 'image_processing'
 gem 'rqrcode'
+gem 'ruby-vips'
 
 # Engines
 gem 'default_where', path: 'engine/default_where'
@@ -37,6 +38,7 @@ end
 group :development do
   gem 'listen'
   gem 'web-console'
+  gem 'sass-embedded'
   gem 'localhost', require: 'localhost/authority'
 end
 
