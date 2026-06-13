@@ -17,6 +17,9 @@ gem 'bcrypt'
 gem 'image_processing'
 gem 'rqrcode'
 gem 'ruby-vips'
+git 'https://gitee.com/tencentcloud/tencentcloud-sdk-ruby.git' do
+  gem 'tencentcloud-sdk-dnspod' # 用于签发 ssl 证书
+end
 
 # Engines
 gem 'default_where', path: 'engine/default_where'

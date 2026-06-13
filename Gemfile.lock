@@ -1,3 +1,11 @@
+GIT
+  remote: https://gitee.com/tencentcloud/tencentcloud-sdk-ruby.git
+  revision: 2b437ae5716609ca70f760a8ba6589577283065f
+  specs:
+    tencentcloud-sdk-common (3.0.1284)
+    tencentcloud-sdk-dnspod (3.0.1247)
+      tencentcloud-sdk-common (~> 3.0)
+
 PATH
   remote: engine/default_form
   specs:
@@ -465,6 +473,7 @@ DEPENDENCIES
   solid_cache
   solid_queue
   sqlite3
+  tencentcloud-sdk-dnspod!
   turbo-rails
   web-console
   webdrivers
@@ -604,6 +613,8 @@ CHECKSUMS
   sshkey (3.0.0) sha256=655ba351d6e01a48dfe59d65530af8975c777b8cc57a061770de3228ff2d11cd
   sshkit (1.25.0) sha256=c8c6543cdb60f91f1d277306d585dd11b6a064cb44eab0972827e4311ff96744
   stringio (3.2.0) sha256=c37cb2e58b4ffbd33fe5cd948c05934af997b36e0b6ca6fdf43afa234cf222e1
+  tencentcloud-sdk-common (3.0.1284)
+  tencentcloud-sdk-dnspod (3.0.1247)
   thor (1.5.0) sha256=e3a9e55fe857e44859ce104a84675ab6e8cd59c650a49106a05f55f136425e73
   timeout (0.6.1) sha256=78f57368a7e7bbadec56971f78a3f5ecbcfb59b7fcbb0a3ed6ddc08a5094accb
   tsort (0.2.0) sha256=9650a793f6859a43b6641671278f79cfead60ac714148aabe4e3f0060480089f
